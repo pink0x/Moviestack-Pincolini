@@ -1,0 +1,88 @@
+body {
+    background: rgb(158,33,11);
+background: linear-gradient(180deg, rgba(158,33,11,1) 0%, rgba(64,12,6,1) 100%);
+ }
+
+ 
+
+ #call1{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    border-radius: 10px;
+    display: flex;
+    font-size: 3rem;
+    padding: 1rem;   
+    color: white;
+    width: 20rem;
+    height: 15rem;
+    background-image: url("https://live.staticflickr.com/7767/26837499465_9110171a77_b.jpg");
+    background-position: contain;
+    background-size: 20rem 15rem;
+    object-position: cover;
+    box-shadow: 10px 10px 50px 0px rgba(0,0,0,0.47);
+   
+    
+ }
+
+ 
+
+ @media (hover:hover) {
+    #call1:hover {       
+        font-size: 4rem;   
+        filter: brightness(50%)  
+        
+} 
+
+}
+
+@media (hover:hover) {
+    #call2:hover {       
+        font-size: 4rem;    
+        filter: brightness(50%)       
+        
+} }
+
+
+ #call2{
+    padding: 1rem;
+    border-radius: 10px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    display: flex;
+    font-size: 3rem;    
+    color: white;
+    width: 20rem;
+    height: 15rem;
+    background-image: url("Recursos Moviestack/bingo.jpg");
+    background-position: contain;
+    background-size: 20rem 15rem; 
+       
+    
+    box-shadow: 10px 10px 50px 0px rgba(0,0,0,0.47);
+
+ }
+
+ #tituloMovies{
+    display: flex;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 3rem;
+    text-align: center;
+    box-shadow: 10px 10px 50px 0px rgba(0,0,0,0.47);
+
+ }
+
+ #contenedorMovie{
+   width: 80%;
+   display: flex;
+   flex-direction: column;
+   margin:auto;
+   margin-top: 5rem;
+ }
+ 
+td{   
+   padding: 0.5rem 1rem;
+   border: 1px solid black;
+   
+}
+
+
+
+

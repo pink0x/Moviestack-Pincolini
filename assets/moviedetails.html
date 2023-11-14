@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css">
+    <title>Document</title>
+</head>
+<body>
+    <header class="flex flex-wrap bg-black items-center justify-between ">
+    
+        <div class="flex flex-wrap items-center">
+            
+    
+            <img src="Recursos Moviestack/Moviestack_isotipo.png" alt="" class="logoimg flex w-32 h-fit object-cover">   
+            <img src="Recursos Moviestack/Moviestack_logotipo2.png" alt=""class= "flex h-16" > 
+        
+            
+        </div>
+    
+        <nav class="flex text-white gap-5 pr-5 items-center flex-wrap ">
+            <a href="../index.html"  > HOME</a>
+            <a href="#" class="flex border border-white px-2 py-1 rounded-md"> MOVIES</a>
+            <a href="#">FAVS</a>
+        </nav>
+    </header>
+
+<main id="contenedorMovie" class="gap-10" >
+    <section id="section1" class="flex gap-10">
+        <div id="imagen"></div>
+    <div id="infoTexto" class="flex flex-col gap-2">
+        <h1 id="titulo" class="text-xl font-bold"></h1>
+        <h2 id="subtitulo" class="text-l font-semibold"></h2>
+        <h3 id="generos"></h3>
+        <p id="parrafo" class="flex flex-wrap"></p>
+    </div>
+    </section>
+   
+    <section id="section2" class="flex flex-row">
+        <div id="tablas" class="flex flex-row gap-10 mb-10  ">
+       
+        </div>
+
+    </section>
+    
+</main>
+<footer class="flex justify-center bg-black py-6">
+    <h2 class="flex text-white ">Sofia Pincolini - COHORT N52</h2>        
+</footer>
+  
+ <script type="module" src="moviedetails.js"></script>
+</body>
+</html>
