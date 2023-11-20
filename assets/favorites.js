@@ -29,43 +29,43 @@ fetch(url, options)
         }
         imprimirTemplate (movieFavs,favsContenedor,createCard)
 
-    console.log(favo)
 
+        favsContenedor.addEventListener('click', (event) => {
+            const button = event.target.dataset.boton        
+            let movieId = event.target.dataset.id
+            let favo = JSON.parse(localStorage.getItem("favs")) || []
+        
+        
+        
+            if (button == "like") {
+        
+                //para sacar de favo
+                if (favo.includes(movieId)) {
+                    favo.splice(favo.indexOf(movieId), 1)
+                    event.target.src = "Recursos Moviestack/heartOff.svg"
+                   
+                    // imprimirTemplate(movieFavs, favsContenedor, createCard)
+                    console.log(favo)
+                    
+        
+        
+                }
+                //para meter en favo
+                else {
+                    favo.push(movieId)        
+                    event.target.src = "Recursos Moviestack/heartOn.svg"            
+                    // imprimirTemplate(movieFavs, favsContenedor, createCard)
+        
+                }
+                localStorage.setItem('favs', JSON.stringify(favo))
+            }
+        
+        })
+    
 
-      
+         } )
+        
     .catch(err => console.log(err))
 
 
-    favsContenedor.addEventListener('click', (event) => {
-        const button = event.target.dataset.boton        
-        let movieId = event.target.dataset.id
-        let favo = JSON.parse(localStorage.getItem("favs")) || []
     
-    
-    
-        if (button == "like") {
-    
-            //para sacar de favo
-            if (favo.includes(movieId)) {
-                favo.splice(favo.indexOf(movieId), 1)
-                event.target.src = "Recursos Moviestack/heartOff.svg"
-               
-                // imprimirTemplate(movieFavs, favsContenedor, createCard)
-                console.log(movieId)
-                
-    
-    
-            }
-            //para meter en favo
-            else {
-                favo.push(movieId)        
-                event.target.src = "Recursos Moviestack/heartOn.svg"            
-                // imprimirTemplate(movieFavs, favsContenedor, createCard)
-    
-            }
-            localStorage.setItem('favs', JSON.stringify(favs))
-        }
-    
-    })
-
-})
