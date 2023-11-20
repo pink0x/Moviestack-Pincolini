@@ -1,6 +1,16 @@
 body {
-    background: rgb(158,33,11);
-background: linear-gradient(180deg, rgba(158,33,11,1) 0%, rgba(64,12,6,1) 100%);
+   background: rgb(51,3,38);
+   background: linear-gradient(180deg, rgba(51,3,38,1) 0%, rgba(0,0,0,1) 100%);
+
+ }
+
+ #imagenBanner {
+   
+  
+   width: 100vw;
+   object-fit: cover;
+   height: 15rem;
+   
  }
 
  
@@ -11,7 +21,7 @@ background: linear-gradient(180deg, rgba(158,33,11,1) 0%, rgba(64,12,6,1) 100%);
     display: flex;
     font-size: 3rem;
     padding: 1rem;   
-    color: white;
+    color: rgba(249, 164, 0, 1);
     width: 20rem;
     height: 15rem;
     background-image: url("https://live.staticflickr.com/7767/26837499465_9110171a77_b.jpg");
@@ -48,7 +58,7 @@ background: linear-gradient(180deg, rgba(158,33,11,1) 0%, rgba(64,12,6,1) 100%);
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     display: flex;
     font-size: 3rem;    
-    color: white;
+    color: rgba(249, 164, 0, 1);
     width: 20rem;
     height: 15rem;
     background-image: url("Recursos Moviestack/bingo.jpg");
@@ -79,10 +89,33 @@ background: linear-gradient(180deg, rgba(158,33,11,1) 0%, rgba(64,12,6,1) 100%);
  
 td{   
    padding: 0.5rem 1rem;
-   border: 1px solid black;
+   border: 1px solid white;
    
 }
 
 
+footer{
+   background-color: rgba(51, 3, 38, 1);
+}
 
 
+.iconoDiv{
+   width:25%;
+   color: white;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   text-align: center;
+   margin: 3rem 0;
+   
+   
+}
+
+.iconoDiv h2{
+   margin-top: 1rem;
+}
+
+#iconoContainer{
+   display: flex;
+   justify-content: space-around;
+}

@@ -20,15 +20,24 @@ export function imprimirTemplate(lista, donde, fn) {
 }
 
 export function createCard (movie){
-     let card= `<article id="card" class=" flex flex-wrap flex-col w-52 bg-black/20 rounded-md items-center p-2">
-    <a href="moviedetails.html?id=${movie.id}" class ="items-center flex flex-col "><img src="${movie.image}" alt="" class=" flex  w-48 h-fit object-cover rounded-md">
-    <h3 class ="flex font-bold  text-yellow-400 text-center"> ${movie.title}</h3>
+     let card= `<article class=" relative flex flex-wrap flex-col w-52 bg-white/10 rounded-md items-center p-2 shadow-xl" data-id="card">
+    <img src="https://moviestack.onrender.com/static/${movie.image}" alt="" class=" flex  w-48 h-fit object-cover rounded-md">
+    <h3 class ="flex font-bold  text-amber-500 text-center"> ${movie.title}</h3>
     <h4 class ="flex font-semibold  text-white/80 text-center">${movie.tagline} </h4>
     <p class = " line-clamp-5  text-white/50 text-center"> ${movie.overview}</p>
-    </article></a>
+    <a href="moviedetails.html?id=${movie.id}" class ="items-center flex flex-col p-2 bg-amber-500 font-semibold rounded-md mt-4 "> More info</a>
+    <a href="#"  data-id="${movie.id}" >
+    <span class="p-1 bg-black/60 absolute top-2 right-2 rounded-sm " data-boton="like "> 
+    <img src="Recursos Moviestack/heartOff.svg" alt="" class="w-4" data-id="${movie.id}" data-boton="like"  >
+     </span>
+     </a> 
+     </article> 
     `
     return card
 }
+
+
+
 
 export function crearSelector (genre){    
     for (const genero of genre){
@@ -37,8 +46,16 @@ export function crearSelector (genre){
 }
 
 export function filtrarPorGenero (listaPeliculas, generoSeleccionado){
+    
     const filtro = listaPeliculas.filter(movie => movie.genres.includes(generoSeleccionado))
-    return filtro
+
+    if (generoSeleccionado == "All"){
+        return listaPeliculas
+    }
+    else {
+        return filtro
+    }
+    
 }
 
 export function filtrarPorNombre(lista, titulos) {
@@ -46,3 +63,11 @@ export function filtrarPorNombre(lista, titulos) {
     return filtro
 }
 
+export function filtrado (movies,genero,titulo,donde){
+    const filtradoPorNombre = filtrarPorNombre(movies,titulo.value)
+    const filtradoPorGenero = filtrarPorGenero(filtradoPorNombre,genero.value)
+    const filtradoFinal = filtrarPorNombre(filtradoPorGenero,titulo.value)
+
+    imprimirTemplate(filtradoFinal, donde, createCard)
+
+}
