@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="styles.css">
+    <link rel="shortcut icon" href="Recursos Moviestack/Moviestack_favicon.png" type="image/x-icon">
+
+    <title>MOVIESTACK</title>
+</head>
+<body >
+    <div id="app"> 
+        {{filtrar}}
+        
+        <div class="min-h-screen flex flex-col">
+            <header class="flex flex-wrap bg-black items-center justify-between sticky top-0 z-10  ">
+        
+                <div class="flex flex-wrap items-center p-4 gap-4">             
+                    <img src="Recursos Moviestack/logo2.png" alt="" class="logoimg flex w-14 h-fit object-cover">   
+                    <img src="Recursos Moviestack/Moviestack_logotipo2.png" alt=""class= "flex h-12" > 
+                  
+                </div>
+            
+                <nav class="flex text-white gap-5 pr-5 items-center flex-wrap ">
+                    <a href="../index.html"  > HOME</a>
+                    <a href="#" class="flex border border-amber-500 px-2 py-1 rounded-md"> MOVIES</a>
+                    <a href="favorites.html">FAVS</a>
+                </nav>
+            </header>
+            
+            <main class="flex grow flex-col">    
+                <h1 id="tituloMovies" class="flex  text-amber-500 text-48 bg-black/80 justify-center py-4 mt-4">MOVIES</h1>
+    
+                <div id="divBuscador" class="flex flex-wrap justify-around self-center mt-4 bg-black/30 w-[90%] rounded-lg p-2 items-center shadow-2xl">   
+                    
+                    
+                        <label for="filtro" class="flex text-white/50 m-2 items-center">Genre:
+                            <select name="genero" id="filtro" class="flex w-56 rounded-md bg-black/50 text-white h-8 m-2" v-model="genreSelected" >
+                                <option value="All"> All </option>
+                                <template v-if ="generos.length >0" v-for ="genero of generos">                                    
+                                    <option v-bind:value="genero" class="bg-black/90">{{genero}} </option>
+                                </template>
+                            </select>
+                        </label>
+
+                        <label for=""class="flex text-white/50 items-center gap-2">Name:
+                            <input type="text" name="search" id="search" placeholder="   Search"  class="flex w-[20rem] rounded-md bg-black/50 text-white/80 h-8" v-model="search" >
+                        </label>                        
+                        
+                    </div>                   
+                 
+    
+                <div id="contenedor" class="flex flex-wrap gap-8 justify-center py-12">
+
+                 <template v-if="filtroFinal.length > 0" v-for="movie of filtroFinal">
+                    <article class=" relative flex flex-wrap flex-col w-52 bg-white/[05%] rounded-md items-center p-2 pb-16 hover:shadow-2xl" data-id="card">
+                        <img v-bind:src= "'https://moviestack.onrender.com/static/' + movie.image"
+                             v-bind:alt= "'imagen de' + movie.title" class=" flex  w-48 h-fit object-cover rounded-md">
+                        <h3 class ="flex font-bold  text-amber-500 text-center"> {{movie.title}}</h3> 
+                        <h4 class ="flex font-bold text-sm  text-white/80 text-center">{{movie.tagline}} </h4>
+                        <p class = " line-clamp-5 text-sm text-white/50 text-center"> {{movie.overview}}</p>
+                        <a v-bind:href="'moviedetails.html?id='+movie.id" class ="items-center flex flex-col p-2 bg-amber-500 font-semibold rounded-md mt-4 absolute bottom-4"> More info</a> 
+                        <a href="#"  v-on:click="likear(movie.id)">
+                        <span class="p-1 bg-black/60 absolute top-2 right-2 rounded-sm " data-boton="like "> 
+                        <img src= "Recursos Moviestack/heartOff.svg" alt="" class="w-4" data-id={{movie.id}}   >
+                         </span>
+                         </a> 
+                         </article>
+                 </template>
+                    
+                </div>        
+                                    
+            </main>
+            
+            <footer class="flex justify-center bg-black py-6">
+                <h2 class="flex text-white ">Sofia Pincolini - COHORT N52</h2>        
+            </footer>
+    
+        </div>
+    
+                
+    </div>
+
+    
+    
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="./movies.js"></script>
+    
+</body>
+</html>
